@@ -1,0 +1,53 @@
+<html>
+    <head>
+        
+	<!-- CSS Files -->
+        <link rel="stylesheet" href="node_modules/material-design-lite/material.min.css">
+        <script src="node_modules/material-design-lite/material.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <style>
+              #progressbar {
+              background-color: white;
+              border-radius: 13px; /* (height of inner div) / 2 + padding */
+              padding: 1px;
+              margin: 65px;
+            }
+            
+            #progressbar > div {
+               background-color: #3F51B5;
+               width: 0%; /* Adjust with JavaScript */
+               height: 5px;
+               border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body style="background:#E8EAF6">
+        <div class="container">
+            <br/>
+            <br/>
+            <div align="center">
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" id="browseBtn">
+                    <i class="material-icons">folder</i>
+                </button>
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" id="sendBtn">
+                    <i class="material-icons">send</i>
+                </button>
+            </div>
+            <div align="center" style="padding:5px">
+                <label id="filename">  </label>
+            </div>
+            <div align="center">
+                <div class="mdl-spinner mdl-js-spinner is-active"
+                id="devicesLoading"></div>
+            </div>
+            <div align="center" id="noDevicesError"></div>
+            <ul class="mdl-list" id="devices"></ul>
+            <div id="progressbar" style="display:none">
+                <div></div>
+            </div>
+        </div>
+        <script src="server.js"></script>
+        <script src="index.js"></script>
+        <script src="services.js"></script>
+    </body>
+</html>
